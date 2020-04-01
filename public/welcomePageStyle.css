@@ -1,0 +1,49 @@
+.login-container {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 10%;
+}
+
+.login-form-1 {
+    color: #0062cc;
+    text-decoration: none;
+    font-weight: 600;
+    background-color: #fff;
+    text-align: center;
+    padding: 5%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+
+h3 {
+    text-align: center;
+    color: #0062cc;
+}
+
+body {
+    margin: auto;
+    padding-top: 10%;
+    width: 30%;
+}
+
+form {
+    padding: 3%;
+}
+
+.btnSubmit {
+    width: 20%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    margin: 4%;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    background-color: #0062cc;
+    color: #fff;
+}
+
+#message {
+    color: red;
+    font-size: 18px;
+    margin-top: 10px;
+    display: none;
+}
