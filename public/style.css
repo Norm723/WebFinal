@@ -63,13 +63,19 @@
     margin-left: 50px;
 }
 
-nav {
+nav.row {
     background-color: darkgrey;
+    margin-left: 0px;
 }
 
 th, td {
     text-align: center;
     vertical-align: middle;
+}
+
+td.selected {
+    background-color: red;
+    font-weight: bold;
 }
 
 #snackbar {

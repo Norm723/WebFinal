@@ -15,8 +15,8 @@ $(document).ready(function () {
                     $("#message").fadeOut(3000);
                })
                .done(function(){
-                   sessionStorage.setItem('name', studentName);
-               location.href = "main.html";
+                   //sessionStorage.setItem('name', studentName);
+                    location.href = "meetings/" + studentName; //route to students page
                 })
                 .fail(function(status) 
                     {alert('Failure!'+ ' Student: ' +  studentName  + ' not found!');
