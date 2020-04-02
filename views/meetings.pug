@@ -48,7 +48,10 @@ html
                     each j in [1,2,3,4,5,6,7,8]
                         -var temp = n[j]
                         -var name = output
-                        if(temp != name)
-                            td= n[j]
-                    //p= n[1]
+                        if(temp === name)
+                            td(style={background: 'red', weight: 'bold'})= name
+                        else if(temp !== 'available')
+                            td(style={background: 'red', weight: 'bold'})
+                        else
+                            td
         block content
