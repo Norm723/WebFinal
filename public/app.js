@@ -1,6 +1,7 @@
 $(document).ready(function () {
     $('#loggedInAs').html('You are logged in as ' + sessionStorage.getItem('name'));
     // put the data from the database into the table
+    createTable(jsonData);
     $('td').click(function () {
         if ($(this).html() === "") {
             if (canAdd($(this).parent())) {
@@ -38,5 +39,9 @@ $(document).ready(function () {
             i++;
         }
         return true;
+    }
+
+    function createTable(jsonData) {
+        //dynamically build table
     }
 })
