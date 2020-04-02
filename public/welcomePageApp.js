@@ -16,7 +16,7 @@ $(document).ready(function () {
                })
                .done(function(){
                    sessionStorage.setItem('name', studentName);
-                    location.href = "main.html/" + studentName; //route to students page
+                    location.href = "meetings/" + studentName; //route to students page
                 })
                 .fail(function(status) 
                     {alert('Failure!'+ ' Student: ' +  studentName  + ' not found!');

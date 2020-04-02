@@ -63,8 +63,9 @@
     margin-left: 50px;
 }
 
-nav {
+nav.row {
     background-color: darkgrey;
+    margin-left: 0px;
 }
 
 th, td {
