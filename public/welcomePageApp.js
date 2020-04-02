@@ -15,7 +15,7 @@ $(document).ready(function () {
                     $("#message").fadeOut(3000);
                })
                .done(function(){
-                   sessionStorage.setItem('name', studentName);
+                   //sessionStorage.setItem('name', studentName);
                     location.href = "meetings/" + studentName; //route to students page
                 })
                 .fail(function(status) 

@@ -65,7 +65,7 @@ app.get('/', (req, res) => {
           console.log(result[0].name);
           if (studentName === result[0].name) {
             //todo send name to main.html 
-            res.redirect('/main.html');
+            res.sendStatus(200);
           } else {
             console.log("login failed: student not found");
             res.status(400).send( studentName + ' not found');
@@ -80,26 +80,25 @@ app.get('/', (req, res) => {
 //sends the students name as a param to the view
   app.get('/meetings/:studName', (req, res) => {
     console.log(req.originalUrl)
-    res.render('meetings', {output: req.params.studName});
+    MongoClient.connect(url, function(err, db) {
+      if (err) throw err;
+      var dbo = db.db("Students");
+      dbo.collection("Meetings").find({}).toArray(function(err, result) {
+        if (err) throw err;
+        console.log(result[0], typeof result[0]);
+        db.close();
+        res.render('meetings', {output: req.params.studName, result});
+      });
+    });
+    //res.render('meetings', {output: req.params.studName});
   });
 
   app.post('/add', (req, res) => {
-    /* var item = {
-      student: req.body.student,
-      time: req.body.time,
-      teacher: req.body.teacher
-    }; */
-    /* mongo.connect(url, function(err, db){
-      db.collection('teachers').insertOne(item, function(err, result){
-          console.log('added to db');
-          db.close;
-      });
-    }); */
     var student = req.body.student;
     var times = req.body.time;
     var teacher = req.body.teacher;
-    console.log('in add ' + student + ' ' + times + ' ' + teacher);
-    console.log(teacher, typeof teacher, times, typeof times)
+    console.log('adding ' + student + ' ' + times + ' ' + teacher+ 'to db');
+    //console.log(teacher, typeof teacher, times, typeof times)
 
     MongoClient.connect(url, function(err, db) {
       if (err) throw err;
